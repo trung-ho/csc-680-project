@@ -5800,4 +5800,8 @@ label {
   text-align: right;
 }
 
+.sign-in-form {
+  max-width: 100% !important;
+}
+
 /*# sourceMappingURL=main.css.map */

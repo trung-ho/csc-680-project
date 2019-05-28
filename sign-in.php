@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="css/themify-icons.css">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/owl.carousel.css">
-  <link rel="stylesheet" href="css/nice-select.css">
   <link rel="stylesheet" href="css/nouislider.min.css">
   <link rel="stylesheet" href="css/ion.rangeSlider.css" />
   <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css" />
@@ -52,8 +51,8 @@
 
 <div class="col-sm-12 my-5">
 	<div class="login_form_inner">
-		<form action="sign-in.php" method="post" onsubmit="return checked();"
-		name="regform" id="regform" class="row login_form ">
+		
+		<form action="sign-in.php" method="post" onsubmit="return checked();" name="regform" id="regform" class="row login_form ">
 			<div class="form-group  w-100">
 		    <div class="col-sm-12">
 		      <input type="email" class="form-control" id="email" name="email" 
@@ -71,7 +70,7 @@
 			<div class="col-md-12 form-group">
 				<input id="submit" class="primary-btn" type="submit" name="submit" value="Sign In">
 			</div>
-			</form>
+		</form>
 	</div>
 </div>
 
