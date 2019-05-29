@@ -20,7 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($errors)) { // If everything's OK.         #1
       // Retrieve the user_id, psword, first_name and user_level for that
       // email/password combination
-      $query = "SELECT user_id, password, first_name, user_level FROM users WHERE email=?";
+      $query = "SELECT user_id, password, first_name, user_level FROM users ";
+      $query .= "WHERE paid='Yes' AND email=?";
       $q     = mysqli_stmt_init($dbcon);
       mysqli_stmt_prepare($q, $query);
       
@@ -57,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
       } else { // No e-mail match was made.
         $errors[] = 'E-mail/Password entered does not match our records. ';
+        $errors[] = 'Perhaps your fee has not yet been processed from PayPal or the credit card. ';
         $errors[] = 'Perhaps you need to register, just click the Register ';
         $errors[] = 'button on the header menu';
       }
