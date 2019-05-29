@@ -42,6 +42,11 @@
 						if (in_array("sign-up", $show)) { ?> 
 							<li class="nav-item"><a class="nav-link" href="sign-up.php">Sign Up</a></li>
 					<?php } ?>
+
+					<?php 
+						if (in_array("address", $show)) { ?> 
+							<li class="nav-item"><a class="nav-link" href="address.php">Address</a></li>
+					<?php } ?>
 					
 					<?php 
 						if (in_array("change-password", $show)) { ?> 

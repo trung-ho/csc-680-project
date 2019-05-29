@@ -29,7 +29,7 @@
 
 <header class="header_area sticky-header"> 
   <?php 
-  $show = array("change-password", "users", "sign-out", "search");
+  $show = array("change-password", "users", "sign-out", "search", "address");
   include('header.php'); 
   ?>
 </header>

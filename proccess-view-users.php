@@ -32,7 +32,7 @@ try {
   }
   $query = "SELECT last_name, first_name, email, ";
   $query .= "DATE_FORMAT(registration_date, '%M %d, %Y')";
-  $query .= " AS regdat, user_id FROM users ORDER BY registration_date ASC";
+  $query .= " AS regdat, user_id, class, paid FROM users ORDER BY registration_date ASC";
   $query .= " LIMIT ?, ?";
   
   $q = mysqli_stmt_init($dbcon);
@@ -57,6 +57,8 @@ try {
 						<th scope="col">First Name</th>
 						<th scope="col">Email</th>
 						<th scope="col">Date Registered</th>
+            <th scope="col">Class</th>
+            <th scope="col">Paid</th>
 					</tr>';
     // Fetch and print all the records:                            
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
@@ -67,6 +69,8 @@ try {
       $first_name        = htmlspecialchars($row['first_name'], ENT_QUOTES);
       $email             = htmlspecialchars($row['email'], ENT_QUOTES);
       $registration_date = htmlspecialchars($row['regdat'], ENT_QUOTES);
+      $class = htmlspecialchars($row['class'], ENT_QUOTES);
+      $paid = htmlspecialchars($row['paid'], ENT_QUOTES);
       echo '<tr>
 					    <td><a href="edit_user.php?id=' . $user_id . '">Edit</a></td>
 					    <td><a href="delete_user.php?id=' . $user_id . '">Delete</a></td>
@@ -74,6 +78,8 @@ try {
 					    <td>' . $first_name . '</td>
 					    <td>' . $email . '</td>
 					    <td>' . $registration_date . '</td>
+              <td>' . $class . '</td>
+              <td>' . $paid . '</td>
 					  </tr>';
     }
     echo '</table>'; // Close the table.
