@@ -30,7 +30,7 @@
 <header class="header_area sticky-header"> 
   <?php 
   $show = array("sign-out", "change-password", "users", "search", "address");
-  include('header.php'); 
+  include('header.php');
   ?>
 </header>
 
@@ -38,10 +38,10 @@
 	<div class="container">
 		<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
 			<div class="col-first">
-				<h1>All Users</h1>
+				<h1>Search Address</h1>
 				<nav class="d-flex align-items-center">
 					<a href="index.php">Home<span class="lnr lnr-arrow-right"></span></a>
-					<a href="users.php">All Users</a>
+					<a href="search.php">Search Address</a>
 				</nav>
 			</div>
 		</div>
@@ -49,11 +49,14 @@
 </section>
 
 <div class="container">
-	<div class="row">
-		<div class="col-sm-12 my-4">
-			<?php require ("proccess-view-users.php"); ?>
-		</div>
+
+<div class="col-sm-12 my-5">
+	<div class="login_form_inner container">
+		<?php require ("process_edit_address.php"); ?>
 	</div>
+</div>
+
+
 </div>
 <footer class="footer-area section_gap">
   <?php include('footer.php'); ?>
