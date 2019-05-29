@@ -13,8 +13,8 @@ try {
   
   $query = "SELECT last_name, first_name, email, ";
   $query .= "DATE_FORMAT(registration_date, '%M %d, %Y')";
-  // $query .= " AS regdat, class, paid, user_id FROM users WHERE ";
-  $query .= " AS regdat, user_id FROM users WHERE ";
+  $query .= " AS regdat, class, paid, user_id FROM users WHERE ";
+  // $query .= " AS regdat, user_id FROM users WHERE ";
   $query .= "last_name=? AND first_name=? ";
   $query .= "ORDER BY registration_date ASC ";
   
@@ -51,10 +51,8 @@ try {
       $first_name        = htmlspecialchars($row['first_name'], ENT_QUOTES);
       $email             = htmlspecialchars($row['email'], ENT_QUOTES);
       $registration_date = htmlspecialchars($row['regdat'], ENT_QUOTES);
-      // $class             = htmlspecialchars($row['class'], ENT_QUOTES);
-      // $paid              = htmlspecialchars($row['paid'], ENT_QUOTES);
-      $class             = '';
-      $paid              = '';
+      $class             = htmlspecialchars($row['class'], ENT_QUOTES);
+      $paid              = htmlspecialchars($row['paid'], ENT_QUOTES);
       echo '<tr>
     <td><a href="edit_user.php?id=' . $user_id . '">Edit</a></td>
     <td><a href="delete_user.php?id=' . $user_id . '">Delete</a></td>
