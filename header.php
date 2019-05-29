@@ -45,7 +45,7 @@
 
 					<?php 
 						if (in_array("address", $show)) { ?> 
-							<li class="nav-item"><a class="nav-link" href="address.php">Address</a></li>
+							<li class="nav-item"><a class="nav-link" href="search-address.php">Address</a></li>
 					<?php } ?>
 					
 					<?php 

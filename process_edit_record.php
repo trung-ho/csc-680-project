@@ -51,12 +51,12 @@ try {
     if (empty($paid)) {
       $errors[] = 'You forgot to enter the paid status.';
     }
-    if (!(($paid == "No") || ($paid == "Yes"))) {
+    if (!(($paid == "No") || ($paid == "Yes") || ($paid == "yes") || ($paid == "no") )) {
       $errors[] = "Paid must be No or Yes.";
     }
     if (empty($errors)) { // If everything's OK.                                     
       $q     = mysqli_stmt_init($dbcon);
-      $query = 'SELECT user_id FROM users WHERE email=? AND user_id !=?';
+      $query = 'SELECT userid FROM users WHERE email=? AND userid !=?';
       mysqli_stmt_prepare($q, $query);
       
       // bind $id to SQL Statement
@@ -66,7 +66,6 @@ try {
       
       mysqli_stmt_execute($q);
       $result = mysqli_stmt_get_result($q);
-      
       if (mysqli_num_rows($result) == 0) { // e-mail does not exist in another record
         $query = 'UPDATE users SET first_name=?, last_name=?, email=?,';
         $query .= ' class=?, paid=?';
@@ -93,10 +92,10 @@ try {
           // Message above is only for debug and should not display sql in live mode
         }
       } else { // Already registered.
-        echo '<p class="text-center">The email address has already been registered.</p>';
+        echo '<p class="alert alert-danger">The email address has already been registered.</p>';
       }
     } else { // Display the errors.
-      echo '<p class="text-center">The following error(s) occurred:<br />';
+      echo '<p class="alert alert-danger">The following error(s) occurred:<br />';
       foreach ($errors as $msg) { // Echo each error.
         echo " - $msg<br />\n";
       }
