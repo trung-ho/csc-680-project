@@ -41,7 +41,7 @@
               <img src="img/features/f-icon1.png" alt="">
             </div>
             <h6>Free Delivery</h6>
-            <p>Free Shipping on all order</p>
+            <p>Free Shipping on all orders</p>
           </div>
         </div>
         <!-- single features -->
