@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css" />
   <link rel="stylesheet" href="css/magnific-popup.css">
   <link rel="stylesheet" href="css/site.css">
+  <script src='https://www.google.com/recaptcha/api.js'></script> 
 </head>
 <body>
 
@@ -225,7 +226,12 @@
 					echo htmlspecialchars($_POST['secret'], ENT_QUOTES); ?>" >
 			    </div>
 			  </div>
-
+			  <div class="form-group row">
+				  <label class="col-sm-4 col-form-label"></label>
+				  <div class="col-sm-8">
+				  <div class="float-left g-recaptcha" data-sitekey="6LcrQ1wUAAAAAPxlrAkLuPdpY5qwS9rXF1j46fhq"></div>
+				  </div>
+				</div>
 				<div class="row form-group">
 					<div class="col-sm-12">
 						<input id="submit" class="primary-btn" type="submit" name="submit" value="Register">
