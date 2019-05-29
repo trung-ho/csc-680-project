@@ -201,6 +201,31 @@
 			    </div>
 			  </div>
 
+			  <div class="form-group row">
+		      <label for="question" class="col-sm-4 col-form-label">Secret Question*:</label>
+				  <div class="col-sm-8">
+			      <select id="question" class="form-control">
+			        <option selected value="">- Select -</option>
+							<option value="Maiden">Mother's Maiden Name</option>
+							<option value="Pet">Pet's Name</option>
+							<option value="School">High School</option>
+							<option value="Vacation">Favorite Vacation Spot</option>
+						</select>
+					</div>
+				</div>  
+				<div class="form-group row">
+			    <label for="secret" class="col-sm-4 col-form-label">Answer*:</label>
+			    <div class="col-sm-8">
+			      <input type="text" class="form-control" id="secret" name="secret" 
+				  pattern="[a-zA-Z][a-zA-Z\s\.\,\-]*" 
+				  title="Alphabetic, period, comma, dash and space only max of 30 characters" 
+				  placeholder="Secret Answer" maxlength="30" required
+				   value=
+					"<?php if (isset($_POST['secret'])) 
+					echo htmlspecialchars($_POST['secret'], ENT_QUOTES); ?>" >
+			    </div>
+			  </div>
+
 				<div class="row form-group">
 					<div class="col-sm-12">
 						<input id="submit" class="primary-btn" type="submit" name="submit" value="Register">
